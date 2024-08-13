@@ -1,26 +1,14 @@
-# hash:sha256:cc09c2eccc2b5e2b45f335aa3926da4bd39007a7c9fcfcc21e4928e231bb7c1e
+# hash:sha256:ba5f1cca9fb4c773185476afc19a816f85f0c9bbbe58452261490c261091f03d
 ARG REGISTRY_HOST
 FROM $REGISTRY_HOST/codeocean/jupyterlab:3.6.1-miniconda4.12.0-python3.9-ubuntu20.04
 
 ARG DEBIAN_FRONTEND=noninteractive
-ARG API_KEY
-ARG API_SECRET
 
 ARG GIT_ASKPASS
 ARG GIT_ACCESS_TOKEN
 COPY git-askpass /
 
 RUN conda install -y \
-        ipykernel==6.21.3 \
-        ipython==8.11.0 \
-        ipywidgets==8.1.2 \
-        jupyter==1.0.0 \
-        jupyterlab==3.6.1 \
-        matplotlib-inline==0.1.6 \
-        nbclient==0.7.2 \
-        nbconvert==7.2.9 \
-        nbformat==5.7.3 \
-        notebook==6.5.3 \
         pip==24.0 \
         scikit-learn==1.4.2 \
     && conda clean -ya
@@ -50,6 +38,7 @@ RUN pip3 install -U --no-cache-dir \
     nglui==3.3.1 \
     numpy==1.23.5 \
     pandas==1.5.3 \
+    papermill==2.6.0 \
     pynwb==2.8.0 \
     scipy==1.10.1 \
     seaborn==0.13.2 \
