@@ -1,4 +1,4 @@
-# hash:sha256:ba5f1cca9fb4c773185476afc19a816f85f0c9bbbe58452261490c261091f03d
+# hash:sha256:4b7c4c66549a1429729e02adc0f918801392e6d29f9ec73ba1062ccef2985a74
 ARG REGISTRY_HOST
 FROM $REGISTRY_HOST/codeocean/jupyterlab:3.6.1-miniconda4.12.0-python3.9-ubuntu20.04
 
@@ -14,7 +14,6 @@ RUN conda install -y \
     && conda clean -ya
 
 RUN pip3 install -U --no-cache-dir \
-    allensdk==2.16.2 \
     brain-observatory-utilities==0.3.1 \
     brainglobe-atlasapi==2.0.6 \
     brainglobe-space==1.0.2 \
@@ -22,6 +21,7 @@ RUN pip3 install -U --no-cache-dir \
     cloud-volume==10.0.0 \
     h5py==3.11.0 \
     hdmf==3.14.1 \
+    hdmf-zarr==0.6.0 \
     imageio==2.34.2 \
     imageio-ffmpeg==0.5.1 \
     imageryclient==1.0.4 \
@@ -37,6 +37,7 @@ RUN pip3 install -U --no-cache-dir \
     neuroglancer==2.39.2 \
     nglui==3.3.1 \
     numpy==1.23.5 \
+    nwbwidgets \
     pandas==1.5.3 \
     papermill==2.6.0 \
     pynwb==2.8.0 \
@@ -48,3 +49,6 @@ RUN pip3 install -U --no-cache-dir \
     trimesh==4.4.3 \
     umap-learn==0.5.6 \
     xarray==2023.1.0
+
+COPY postInstall /
+RUN /postInstall
