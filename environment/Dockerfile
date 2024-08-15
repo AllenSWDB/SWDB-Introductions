@@ -1,4 +1,4 @@
-# hash:sha256:da72291381e6feef545291c0bfa67977bd60ea055bbfa4b2ec4c7509af90f3d1
+# hash:sha256:e6cdbbe56fb25d746c26d2ad2ff30ec7d9a5675c90c09a843a83bb804f4bc707
 ARG REGISTRY_HOST
 FROM $REGISTRY_HOST/codeocean/jupyterlab:3.6.1-miniconda4.12.0-python3.9-ubuntu20.04
 
@@ -39,7 +39,7 @@ RUN pip3 install -U --no-cache-dir \
     myst-parser==2.0.0 \
     neuroglancer==2.39.2 \
     nglui==3.3.1 \
-    numpy \
+    numpy==1.23.5 \
     nwbwidgets==0.11.3 \
     pandas==1.5.3 \
     papermill==2.6.0 \
