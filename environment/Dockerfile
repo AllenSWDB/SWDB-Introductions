@@ -1,4 +1,4 @@
-# hash:sha256:4b7c4c66549a1429729e02adc0f918801392e6d29f9ec73ba1062ccef2985a74
+# hash:sha256:da72291381e6feef545291c0bfa67977bd60ea055bbfa4b2ec4c7509af90f3d1
 ARG REGISTRY_HOST
 FROM $REGISTRY_HOST/codeocean/jupyterlab:3.6.1-miniconda4.12.0-python3.9-ubuntu20.04
 
@@ -14,6 +14,8 @@ RUN conda install -y \
     && conda clean -ya
 
 RUN pip3 install -U --no-cache-dir \
+    setuptools==72.2.0
+RUN pip3 install -U --no-cache-dir \
     brain-observatory-utilities==0.3.1 \
     brainglobe-atlasapi==2.0.6 \
     brainglobe-space==1.0.2 \
@@ -25,6 +27,7 @@ RUN pip3 install -U --no-cache-dir \
     imageio==2.34.2 \
     imageio-ffmpeg==0.5.1 \
     imageryclient==1.0.4 \
+    ipykernel==6.29.5 \
     jax==0.4.30 \
     jaxlib==0.4.30 \
     jupyterlab-myst==2.4.2 \
@@ -36,8 +39,8 @@ RUN pip3 install -U --no-cache-dir \
     myst-parser==2.0.0 \
     neuroglancer==2.39.2 \
     nglui==3.3.1 \
-    numpy==1.23.5 \
-    nwbwidgets \
+    numpy \
+    nwbwidgets==0.11.3 \
     pandas==1.5.3 \
     papermill==2.6.0 \
     pynwb==2.8.0 \
