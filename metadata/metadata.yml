@@ -1,2 +1,7 @@
 metadata_version: 1
 name: SWDB 2024 Introductions
+description: Brief introductions to the datasets used for SWDB 2024
+tags:
+- SWDB
+authors:
+- name: SWDB
